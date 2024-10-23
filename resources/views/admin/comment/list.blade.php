@@ -50,10 +50,10 @@
                                 @forelse ($comment as $blogs)
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
-                                    <td>{{ $blogs->name }}</td> <!-- Added name field to match table header -->
+                                    <td>{{ $blogs->comment }}</td> <!-- Added name field to match table header -->
                                    
                                   
-                                    <td>{{ $blogs->created_at_formatted }}</td>
+                                    <td>{{ $blogs->created_at }}</td>
                                     <!-- Fixed typo from 'crated_at' to 'created_at' -->
                                     <td><a href="{{route('comment.edit', encrypt($blogs->id))}}"
                                             class="btn btn-primary">Edit</a></td>
