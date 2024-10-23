@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('comment')->nullable();
             $table->unsignedBigInteger('user_id'); 
-            $table->unsignedBigInteger('blog_id'); 
+            $table->unsignedBigInteger('blog_id')->nullable(); 
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Setting up foreign key for user_id
             $table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade'); // Setting up foreign key for blog_id
