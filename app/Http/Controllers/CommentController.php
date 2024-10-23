@@ -59,12 +59,12 @@ class CommentController extends Controller
         ]);
 
         $id = $request->id;
-        $blog = new Blog();
+        $blogs = new Blog();
         $blog = Comment::getSingleData($id);
-        $blog->comment = trim($request->title);
+        $blog->comment = trim($request->comment);
      
         $blog->user_id = Auth::user()->id;
-        $blog->content = $blog->id;
+        $blog->comment = $blogs->id;
        
        
         $blog->save();
