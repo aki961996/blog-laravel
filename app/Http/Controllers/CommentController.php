@@ -60,14 +60,13 @@ class CommentController extends Controller
 
         $id = $request->id;
         $blogs = new Blog();
-        $blog = Comment::getSingleData($id);
-        $blog->comment = trim($request->comment);
+        $comment = Comment::getSingleData($id);
+        $comment->comment = trim($request->comment);
      
-        $blog->user_id = Auth::user()->id;
-        $blog->comment = $blogs->id;
-       
-       
-        $blog->save();
+        $comment->user_id = Auth::user()->id;
+        $comment->blog_id = $blogs->id;
+    
+        $comment->save();
         return redirect()->route('blog.list')->with('success', 'Comment Updated Successfully');
     }
 
