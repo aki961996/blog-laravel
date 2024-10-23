@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Setting up foreign key for user_id
             $table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade'); // Setting up foreign key for blog_id
 
-            
+            $table->timestamps();
         });
     }
 
