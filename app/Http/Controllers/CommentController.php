@@ -75,7 +75,7 @@ class CommentController extends Controller
         $id = $id;
         $comment = Comment::find($id);
      
-        $comment->save();
+        $comment->delete();
         return redirect()->route('comment.list')->with('success', 'comment deleted successfully');
     }
 }
