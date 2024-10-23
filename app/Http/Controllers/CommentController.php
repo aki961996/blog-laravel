@@ -37,7 +37,7 @@ class CommentController extends Controller
         $comment->blog_id = $blog->id;
     
         $comment->save();
-        return redirect()->route('blog.list')->with('success', 'New comment successfully addedd');
+        return redirect()->route('comment.list')->with('success', 'New comment successfully addedd');
     }
     public function edit($id)
     {
@@ -67,7 +67,7 @@ class CommentController extends Controller
         $comment->blog_id = $blogs->id;
     
         $comment->save();
-        return redirect()->route('blog.list')->with('success', 'Comment Updated Successfully');
+        return redirect()->route('comment.list')->with('success', 'Comment Updated Successfully');
     }
 
     public function destroy($id)
@@ -76,6 +76,6 @@ class CommentController extends Controller
         $comment = Comment::find($id);
      
         $comment->save();
-        return redirect()->route('blog.list')->with('success', 'comment deleted successfully');
+        return redirect()->route('comment.list')->with('success', 'comment deleted successfully');
     }
 }
